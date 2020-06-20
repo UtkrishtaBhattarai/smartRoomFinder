@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RegistrationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_layout"
+            android:layout_marginTop="-4dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_baseline_smartphone_24" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Smart Room Finder \n Register"
+                android:layout_marginRight="5dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etrfname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/auth_edit"
+                    android:hint="First name"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:drawableTint="#c2c0bf"
+                    android:inputType="text"
+                    android:layout_marginRight="7dp"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:id="@+id/etrlname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/auth_edit"
+                    android:hint="Last Name"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="7dp"
+                    android:drawableTint="#c2c0bf"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etremail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/auth_edit"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:drawableTint="#c2c0bf"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/etrpwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/auth_edit"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:drawableTint="#c2c0bf"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/etaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/auth_edit"
+                android:hint="Address"
+                android:padding="10dp"
+                android:drawableTint="#c2c0bf"
+                android:inputType="text"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/etrnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/auth_edit"
+                android:hint="Phone number"
+                android:inputType="number"
+                android:padding="10dp"
+                android:drawableTint="#c2c0bf"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textColor="@color/card_color"
+                android:textAlignment="textEnd"
+                android:layout_marginTop="15dp"
+                android:textSize="13dp"
+                android:layout_marginBottom="15dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:id="@+id/btnlogins"
+                android:background="@drawable/auth_button"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:padding="12dp"
+                android:textSize="13dp"
+                android:textAllCaps="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already a member? "
+                    android:textSize="13dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtLogin"
+                    android:clickable="true"
+                    android:text="Login"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/card_color"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
