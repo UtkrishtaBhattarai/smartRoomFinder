@@ -54,6 +54,9 @@ public class LandingActivity extends AppCompatActivity {
 
                 // set id and pass value in ProductActivity
                 AddProductActivity.id = response.body().get_id();
+                PropertyDetailActivity.id=response.body().get_id();
+                LikedPropertyActivity.id=response.body().get_id();
+                OrderActivity.id=response.body().get_id();
                 Toast.makeText(LandingActivity.this, "ID IS"+response.body().get_id(), Toast.LENGTH_SHORT).show();
                 // etfname.setText(response.body().getFname());
                 //etlname.setText(response.body().getLname());

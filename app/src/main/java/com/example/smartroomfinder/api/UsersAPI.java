@@ -1,7 +1,9 @@
 package com.example.smartroomfinder.api;
+import com.example.smartroomfinder.models.Cart;
 import com.example.smartroomfinder.models.UserUpdateModel;
 import com.example.smartroomfinder.models.Users;
 import com.example.smartroomfinder.models.UsersCUD;
+import com.example.smartroomfinder.serverresponse.CartResponse;
 import com.example.smartroomfinder.serverresponse.SignUpResponse;
 
 import retrofit2.Call;
@@ -31,6 +33,15 @@ public interface UsersAPI {
     //forupdatinguser
     @PUT("users/me")
     Call<UserUpdateModel> edituser(@Header("Authorization")String token, @Body UserUpdateModel userUpdateModel);
+
+    @FormUrlEncoded
+    @POST("cart/checkcart")
+    Call<CartResponse> checkcart(@Field("productid") String productid, @Field("userid") String userid);
+
+    @POST("cart/addcart")
+    Call<Void> addcart(@Body Cart cart);
+
+
 
     //
 //    @GET("order/orderget/{id}")

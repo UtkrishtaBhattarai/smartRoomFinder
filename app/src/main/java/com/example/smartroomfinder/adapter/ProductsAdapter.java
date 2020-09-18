@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.smartroomfinder.PropertyDetailActivity;
 import com.example.smartroomfinder.R;
 import com.example.smartroomfinder.models.Products;
 import com.example.smartroomfinder.url.URL;
@@ -55,14 +57,16 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyHold
         holder.item_product_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(contexts, ProductdetailActivity.class);
-//                intent.putExtra("_id", products.get_id());
-//                intent.putExtra("image", products.getImage());
-//                intent.putExtra("name", products.getName());
-//                intent.putExtra("description", products.getDescription());
-//                intent.putExtra("price", products.getPrice());
-//                intent.putExtra("specification", products.getSpecification());
-//                contexts.startActivity(intent);
+                Intent intent = new Intent(contexts, PropertyDetailActivity.class);
+                intent.putExtra("userid", products.getUserid());
+                intent.putExtra("_id", products.get_id());
+                intent.putExtra("number", products.getNumber());
+                intent.putExtra("image", products.getImage());
+                intent.putExtra("name", products.getName());
+                intent.putExtra("description", products.getDescription());
+                intent.putExtra("price", products.getPrice());
+                intent.putExtra("location", products.getlocation());
+                contexts.startActivity(intent);
             }
         });
     }
@@ -75,7 +79,6 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyHold
     public class MyHolder extends RecyclerView.ViewHolder {
         TextView txt_item_product_name, txt_item_product_price;
         ImageView item_product_image;
-
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             txt_item_product_name = itemView.findViewById(R.id.txtProductName);

@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartroomfinder.AddProductActivity;
+import com.example.smartroomfinder.LikedPropertyActivity;
+import com.example.smartroomfinder.ProfileActivity;
 import com.example.smartroomfinder.R;
 import com.example.smartroomfinder.adapter.ProductsAdapter;
 import com.example.smartroomfinder.api.ProductsAPI;
@@ -44,11 +46,24 @@ public class HomeFragment extends Fragment {
         btnprofileview = root.findViewById(R.id.btnprofileview);
         btnpropadd=root.findViewById(R.id.addprop);
         webview=root.findViewById(R.id.webview);
-
         btnpropadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), AddProductActivity.class);
+                startActivity(intent);
+            }
+        });
+        btncart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), LikedPropertyActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnprofileview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), ProfileActivity.class);
                 startActivity(intent);
             }
         });

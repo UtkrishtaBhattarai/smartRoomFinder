@@ -50,7 +50,8 @@ public class AddProductActivity extends AppCompatActivity {
     protected void askPermissions() {
         String[] permissions = {
                 "android.permission.READ_EXTERNAL_STORAGE",
-                "android.permission.WRITE_EXTERNAL_STORAGE"
+                "android.permission.WRITE_EXTERNAL_STORAGE",
+                "android.permission.Notifications"
         };
         int requestCode = 200;
         requestPermissions(permissions, requestCode);
@@ -145,7 +146,7 @@ public class AddProductActivity extends AppCompatActivity {
         String location = etplocation.getText().toString();
         String description = etpdesc.getText().toString();
         String number = etpnumber.getText().toString();
-        Products products = new Products(name, price, imageName, number, location, description,userid );
+        Products products = new Products(name, price, imageName, number, description,location, userid,"122" );
         ProductsAPI productsAPI = URL.getInstance().create(ProductsAPI.class);
         Call<Void> signUpCall = productsAPI.products(products);
 

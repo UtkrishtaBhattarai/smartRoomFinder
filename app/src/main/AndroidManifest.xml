@@ -20,10 +20,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".LikedPropertyActivity" />
+        <activity android:name=".PropertyDetailActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity
             android:name=".LandingActivity"
-            android:label="@string/title_activity_landing"></activity>
-        <activity android:name=".AddProductActivity"></activity> <!-- <meta-data -->
+            android:label="@string/title_activity_landing" />
+        <activity android:name=".AddProductActivity" /> <!-- <meta-data -->
         <!-- android:name="com.google.android.geo.API_KEY" -->
         <!-- android:value="@string/google_maps_key" /> -->
         <!--  -->

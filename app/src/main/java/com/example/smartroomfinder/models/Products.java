@@ -9,6 +9,16 @@ public class Products {
     private String number;
     private String location;
 
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    private String userid;
+
     public String get_id() {
         return _id;
     }
@@ -69,7 +79,7 @@ public class Products {
         this.image = image;
     }
 
-    public Products(String name, String price, String image,String number, String description, String location, String _id) {
+    public Products(String name, String price, String image,String number, String description, String location, String _id, String userid) {
         this.name = name;
         this.price = price;
         this.number=number;
@@ -77,6 +87,7 @@ public class Products {
         this.description = description;
         this.location = location;
         this._id = _id;
+        this.userid=userid;
     }
 
     @Override

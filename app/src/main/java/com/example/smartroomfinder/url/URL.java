@@ -5,9 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class URL {
 
-  //  public static final String base_url="http://10.0.2.2:4000/";
-
- public static final String base_url="http://192.168.137.1:4000/";
+    //public static final String base_url="http://10.0.2.2:4000/";
+    public static final String base_url="http://192.168.137.1:4000/";
 
 
     public static String token = "Bearer ";
