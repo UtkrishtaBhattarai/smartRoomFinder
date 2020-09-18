@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnadd=findViewById(R.id.btnopenaddactivity);
+        //btnadd=findViewById(R.id.btnopenaddactivity);
         loadCurrentUser();
 
         btnadd.setOnClickListener(new View.OnClickListener() {

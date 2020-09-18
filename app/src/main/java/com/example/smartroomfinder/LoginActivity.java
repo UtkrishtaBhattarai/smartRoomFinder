@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
         StrictModeClass.StrictMode();
         if (loginBLL.checkuser(email, password)) {
             // Intent intent = new Intent(LoginActivity.this, LandingActivity.class);
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, LandingActivity.class);
             startActivity(intent);
             scheduleNotification(getNotification("You are successfully logged into the system..."), 5000);
             finish();
