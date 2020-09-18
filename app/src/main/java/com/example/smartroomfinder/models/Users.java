@@ -1,6 +1,8 @@
 package com.example.smartroomfinder.models;
 
 public class Users {
+
+    private String _id;
     private String fname;
     private String lname;
     private String email;
@@ -16,7 +18,6 @@ public class Users {
         this._id = _id;
     }
 
-    private String _id;
 
     public Users(String fname, String lname, String email, String password, String address, String number, String _id) {
         this.fname = fname;

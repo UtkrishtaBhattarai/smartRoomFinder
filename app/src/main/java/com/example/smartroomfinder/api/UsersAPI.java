@@ -16,20 +16,20 @@ import retrofit2.http.Path;
 
 public interface UsersAPI {
 
-    @POST("register/register_user")
+    @POST("users/register")
     Call<Void> registerEmployee(@Body UsersCUD usersCUD);
 
     //for logging into the system
     @FormUrlEncoded
-    @POST("register/login_user")
+    @POST("users/login_user")
     Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
 
     //me
-    @GET("register/me")
+    @GET("users/me")
     Call<Users> getUserDetails(@Header("Authorization")String token);
 
     //forupdatinguser
-    @PUT("register/me")
+    @PUT("users/me")
     Call<UserUpdateModel> edituser(@Header("Authorization")String token, @Body UserUpdateModel userUpdateModel);
 
     //
