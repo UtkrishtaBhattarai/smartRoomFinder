@@ -139,12 +139,13 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     private void signUp() {
+        String userid = id;
         String name = etpname.getText().toString();
         String price = etpprice.getText().toString();
         String location = etplocation.getText().toString();
         String description = etpdesc.getText().toString();
         String number = etpnumber.getText().toString();
-        Products products = new Products(name, price, imageName, number, location, description,id );
+        Products products = new Products(name, price, imageName, number, location, description,userid );
         ProductsAPI productsAPI = URL.getInstance().create(ProductsAPI.class);
         Call<Void> signUpCall = productsAPI.products(products);
 

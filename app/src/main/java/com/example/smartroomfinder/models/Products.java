@@ -72,6 +72,7 @@ public class Products {
     public Products(String name, String price, String image,String number, String description, String location, String _id) {
         this.name = name;
         this.price = price;
+        this.number=number;
         this.image = image;
         this.description = description;
         this.location = location;

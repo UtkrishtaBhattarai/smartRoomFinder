@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //btnadd=findViewById(R.id.btnopenaddactivity);
-        loadCurrentUser();
-
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,37 +36,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void loadCurrentUser() {
-        UsersAPI usersAPI = URL.getInstance().create(UsersAPI.class);
-        Call<Users> userCall = usersAPI.getUserDetails(URL.token);
-        userCall.enqueue(new Callback<Users>() {
-            @Override
-            public void onResponse(Call<Users> call, Response<Users> response) {
-                if (!response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Error" + response.code(), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                users = response.body();
-                userID = response.body().get_id();
 
-                // set id and pass value in ProductActivity
-                AddProductActivity.id = response.body().get_id();
-                //CartActivity.id = response.body().get_id();
-                //OrderActivity.id=response.body().get_id();
-
-                Toast.makeText(MainActivity.this, "ID IS"+response.body().get_id(), Toast.LENGTH_SHORT).show();
-               // etfname.setText(response.body().getFname());
-                //etlname.setText(response.body().getLname());
-                //etemail.setText(response.body().getEmail());
-                //etaddress.setText(response.body().getAddress());
-                //etnumber.setText(response.body().getNumber());
-            }
-
-            @Override
-            public void onFailure(Call<Users> call, Throwable t) {
-                Log.d("My message", "onFaliure" + t.getLocalizedMessage());
-                Toast.makeText(MainActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 }
