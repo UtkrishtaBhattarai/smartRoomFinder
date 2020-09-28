@@ -20,7 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".CheckOrderActivity"></activity>
+        <activity android:name=".KhabarActivity" />
+        <activity android:name=".OrderActivity" />
         <activity android:name=".LikedPropertyActivity" />
         <activity android:name=".PropertyDetailActivity" />
         <activity android:name=".ProfileActivity" />

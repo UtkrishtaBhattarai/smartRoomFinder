@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".OrderActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:background="#fffdd0 ">
+    android:background="#45E3A730">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

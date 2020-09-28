@@ -2,8 +2,21 @@ package com.example.smartroomfinder.models;
 
 public class Order {
 
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    private String _id;
     private String userid;
     private String orderprice;
+    private String ordernumber;
+    private int trackingordernumber ;
+    private String posteduser ;
+    private int numberofpeople;
 
     public String getUserid() {
         return userid;
@@ -73,10 +86,6 @@ public class Order {
         this.numberofpeople = numberofpeople;
     }
 
-    private String ordernumber;
-    private int trackingordernumber ;
-    private String posteduser ;
-    private int numberofpeople;
 
 
 

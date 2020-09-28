@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.example.smartroomfinder.api.UsersAPI;
 import com.example.smartroomfinder.models.Users;
+import com.example.smartroomfinder.ui.notifications.NotificationsFragment;
 import com.example.smartroomfinder.url.URL;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -57,6 +58,7 @@ public class LandingActivity extends AppCompatActivity {
                 PropertyDetailActivity.id=response.body().get_id();
                 LikedPropertyActivity.id=response.body().get_id();
                 OrderActivity.id=response.body().get_id();
+                NotificationsFragment.id=response.body().get_id();
                 Toast.makeText(LandingActivity.this, "ID IS"+response.body().get_id(), Toast.LENGTH_SHORT).show();
                 // etfname.setText(response.body().getFname());
                 //etlname.setText(response.body().getLname());

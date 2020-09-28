@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartroomfinder.AddProductActivity;
+import com.example.smartroomfinder.CheckOrderActivity;
 import com.example.smartroomfinder.LikedPropertyActivity;
 import com.example.smartroomfinder.ProfileActivity;
 import com.example.smartroomfinder.R;
@@ -34,6 +35,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    TextView btnshopmore;
     private ImageView btncart, btnprofileview, btnaboutus,webview,btnpropadd;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -45,6 +47,7 @@ public class HomeFragment extends Fragment {
         btnaboutus = root.findViewById(R.id.btnaboutus);
         btnprofileview = root.findViewById(R.id.btnprofileview);
         btnpropadd=root.findViewById(R.id.addprop);
+        btnshopmore=root.findViewById(R.id.shopmore);
         webview=root.findViewById(R.id.webview);
         btnpropadd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +60,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), LikedPropertyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnshopmore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), CheckOrderActivity.class);
                 startActivity(intent);
             }
         });

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartroomfinder.R;
@@ -37,7 +38,9 @@ public class DashboardFragment extends Fragment {
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         recyclerView_ = root.findViewById(R.id.rvproducts);
+        recyclerView1 = root.findViewById(R.id.rvbajaj);
         getProduct();
+        getfProduct();
         return root;
     }
     public void getProduct() {
@@ -52,6 +55,31 @@ public class DashboardFragment extends Fragment {
                 recyclerView_.setLayoutManager(mlayoutManager);
                 recyclerView_.setHasFixedSize(true);
                 recyclerView_.setAdapter(recyclerviewAdapter);
+                recyclerviewAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<Products>> call, Throwable t) {
+
+            }
+        });
+
+
+    }
+    public void getfProduct() {
+        ProductsAPI retrofitProductAPI = URL.getInstance().create(ProductsAPI.class);
+        Call<List<Products>> ProductsCall = retrofitProductAPI.getallfProduct();
+        ProductsCall.enqueue(new Callback<List<Products>>() {
+            @Override
+            public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {
+                ProductsAdapter recyclerviewAdapter = new ProductsAdapter(response.body(), getActivity());
+
+                // elevation design
+                LinearLayoutManager horizontalLayoutManager = new LinearLayoutManager(getActivity(),
+                        LinearLayoutManager.HORIZONTAL, false);
+                recyclerView1.setLayoutManager(horizontalLayoutManager);
+                recyclerView1.setHasFixedSize(true);
+                recyclerView1.setAdapter(recyclerviewAdapter);
                 recyclerviewAdapter.notifyDataSetChanged();
             }
 
